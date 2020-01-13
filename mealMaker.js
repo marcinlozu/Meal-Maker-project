@@ -10,7 +10,7 @@ get appetizers() {
 },
 
 set appetizers(appetizersIn) {
- this._courses.appetizers = appetizers;
+ this._courses.appetizers.push(appetizersIn)
 },
 
 get mains() {
@@ -18,7 +18,7 @@ get mains() {
 },
 
 set mains(mainsIn) {
- this._courses.mains = mains;
+ this._courses.mains.push(mainsIn)
 },
 
 get desserts() {
@@ -26,7 +26,7 @@ get desserts() {
 },
 
 set desserts(dessertsIn) {
- this._courses.desserts = desserts;
+ this._courses.desserts.push(dessertsIn)
 },
 //getter for all menu
 get courses() {
@@ -44,8 +44,10 @@ addDishToCourse(courseName, dishName, dishPrice) {
 		dishPrice,
 	}
 
-	//this._courses[courseName].push(dish); //try to replace this with setters
-	this[courseName].push(dish) //using setters
+	//this._courses[courseName].push(dish); //form CodeCademy
+
+	//using setters
+	this[courseName] = dish
 },
 
 getRandomDishFromCourse(courseName) {
